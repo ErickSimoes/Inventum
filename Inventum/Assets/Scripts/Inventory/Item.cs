@@ -1,10 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Item {
+public class Element {
+    public class Item : MonoBehaviour {
+        public string title;
+        public Sprite icon;
+        public float weight;
+
+    }
     
-    public string name;
-    public Sprite icon;
-    public float weight;
 }
