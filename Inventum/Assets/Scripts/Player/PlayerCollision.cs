@@ -14,6 +14,8 @@ public class PlayerCollision : MonoBehaviour {
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit) {
-        print(hit.gameObject.name);
+        if (hit.gameObject.tag == "Item") {
+            print("Bati em um item");
+        }
     }
 }
