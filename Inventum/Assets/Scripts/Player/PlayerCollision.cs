@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour {
     
-    void Start() {
-        
-    }
+    Inventory inventory;
 
-    
-    void Update() {
-        
+    void Start() {
+        inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
+
+        if (!inventory) {
+            Debug.LogError("Inventory is not found!");
+        }
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit) {
