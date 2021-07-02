@@ -2,12 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour {
+[CreateAssetMenu(fileName = "Inventory", menuName = "Inventum/Inventory", order = 0)]
+public class Inventory : ScriptableObject {
     
-    public List<Element.Item> items;
+    public List<Item> items = new List<Item>();
 
-    void Start() {
-        
+    public void AddItems(Item item) {
+        items.Add(item);
+        ShowItems();
+    }
+
+    public void ShowItems() {
+        foreach (Item item in items) {
+            Debug.Log($"{item.type} - {item.title}");
+        }
     }
 
 }
