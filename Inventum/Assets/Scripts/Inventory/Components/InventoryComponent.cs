@@ -8,7 +8,7 @@ public class InventoryComponent : MonoBehaviour {
     public Inventory inventory;
     public GameObject itemButton;
 
-    void Start() {
+    void OnEnable() {
         GameObject recentItem;
         foreach (Item item in inventory.items) {
             recentItem = Instantiate(itemButton, this.transform);
@@ -16,7 +16,10 @@ public class InventoryComponent : MonoBehaviour {
         }
     }
 
-    void Update() {
-        
+    void OnDisable() {
+        Component[] items = GetComponentsInChildren(typeof(Button), true);
+        foreach (Component item in items) {
+            Destroy(item.gameObject);
+        }
     }
 }
