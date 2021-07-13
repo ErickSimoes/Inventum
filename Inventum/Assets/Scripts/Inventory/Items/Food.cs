@@ -9,12 +9,16 @@ public class Food : Item {
 
     public override void Action() {
         
-        if (!Player) {
-            Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        if (!player) {
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         }
 
-        Player.health += this.health;
-        FindObjectOfType<InventoryComponent>().inventory.RemoveItem(this);
-        
+        player.health += this.health;
+
+        if (!inventory) {
+            inventory = FindObjectOfType<InventoryComponent>().inventory;
+        }
+
+        inventory.RemoveItem(this);
     }
 }

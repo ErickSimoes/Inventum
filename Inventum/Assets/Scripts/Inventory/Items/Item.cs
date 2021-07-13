@@ -1,7 +1,8 @@
 using UnityEngine;
 
 public abstract class Item : ScriptableObject{
-    public static PlayerController Player;
+    public static PlayerController player;
+    public static Inventory inventory;
     public enum Type {
         Food, Weapon, PowerUp
     }
