@@ -18,4 +18,9 @@ public class Inventory : ScriptableObject {
         }
     }
 
+    public void RemoveItem(Item item) {
+        items.Remove(item);
+        ShowItems();
+    }
+
 }

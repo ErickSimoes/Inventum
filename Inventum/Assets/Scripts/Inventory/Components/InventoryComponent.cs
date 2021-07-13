@@ -13,6 +13,7 @@ public class InventoryComponent : MonoBehaviour {
         foreach (Item item in inventory.items) {
             recentItem = Instantiate(itemButton, this.transform);
             recentItem.GetComponent<Image>().sprite = item.icon;
+            recentItem.GetComponent<Button>().onClick.AddListener(item.Action);
         }
     }
 

@@ -7,4 +7,8 @@ public class Weapon : Item {
     public int damage;
     public float weight;
 
+    public override void Action() {
+        
+    }
+
 }
