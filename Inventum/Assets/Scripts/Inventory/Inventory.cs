@@ -9,18 +9,10 @@ public class Inventory : ScriptableObject {
 
     public void AddItems(Item item) {
         items.Add(item);
-        ShowItems();
-    }
-
-    public void ShowItems() {
-        foreach (Item item in items) {
-            Debug.Log($"{item.type} - {item.title}");
-        }
     }
 
     public void RemoveItem(Item item) {
         items.Remove(item);
-        ShowItems();
     }
 
 }
